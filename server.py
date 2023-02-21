@@ -4,6 +4,8 @@ from feature_extractor import FeatureExtractor
 from datetime import datetime
 from flask import Flask, request, render_template
 from pathlib import Path
+import json
+import os
 
 app = Flask(__name__)
 
@@ -32,6 +34,18 @@ def index():
         dists = np.linalg.norm(features-query, axis=1)  # L2 distances to features
         ids = np.argsort(dists)[:3]  # Top 3 results
         scores = [(dists[id], img_paths[id]) for id in ids]
+
+        results = []
+
+        for item in scores:
+            results.append({
+                "filename" : os.path.join(item[1]),
+                "uncertainty": os.path.join(str(item[0]))
+            })
+
+        # Create a JSON file with the results
+        with open('data.json', 'w') as outputfile:
+            json.dump(results, outputfile, ensure_ascii=False, indent=4)        
 
         return render_template('index.html',
                                query_path=uploaded_img_path,
