@@ -1,0 +1,27 @@
+[
+    {
+        "filename": "static\\img\\25.jpg",
+        "uncertainty": "1.1378974",
+        "size": "5"
+    },
+    {
+        "filename": "static\\img\\26.jpg",
+        "uncertainty": "1.1669402",
+        "size": "5"
+    },
+    {
+        "filename": "static\\img\\27.jpg",
+        "uncertainty": "1.1805135",
+        "size": "5"
+    },
+    {
+        "filename": "static\\img\\20.jpg",
+        "uncertainty": "1.2060794",
+        "size": "5"
+    },
+    {
+        "filename": "static\\img\\6.jpg",
+        "uncertainty": "1.2061508",
+        "size": "5"
+    }
+]
